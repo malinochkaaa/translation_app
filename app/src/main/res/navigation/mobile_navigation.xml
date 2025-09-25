@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_translation"
+        android:name="com.example.translationapp.presentation.history.presentation.HistoryFragment"
+        android:label="@string/title_translation"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="com.example.translationapp.presentation.translation.presentation.TranslationFragment"
+        android:label="@string/title_history"
+        tools:layout="@layout/fragment_translation" />
+
+    <fragment
+        android:id="@+id/navigation_favorites"
+        android:name="com.example.translationapp.presentation.favorites.presentation.FavoritesFragment"
+        android:label="@string/title_favorites"
+        tools:layout="@layout/fragment_favorites" />
+</navigation>

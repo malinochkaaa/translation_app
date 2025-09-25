@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LikeButton">
+        <attr name="likedSrc" format="reference"/>
+        <attr name="unlikedSrc" format="reference"/>
+        <attr name="isLiked" format="boolean"/>
+    </declare-styleable>
+</resources>

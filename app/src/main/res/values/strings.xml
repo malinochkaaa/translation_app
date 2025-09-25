@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TranslationApp</string>
+    <string name="title_translation">Translation</string>
+    <string name="title_history">History</string>
+    <string name="title_favorites">Favorites</string>
+
+    <string name="translations_list_card_view_text">%1$s -> %2$s</string>
+</resources>

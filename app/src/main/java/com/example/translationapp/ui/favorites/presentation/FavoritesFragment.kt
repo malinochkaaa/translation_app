@@ -1,4 +1,4 @@
-package com.example.translationapp.presentation.favorites.presentation
+package com.example.translationapp.ui.favorites.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater

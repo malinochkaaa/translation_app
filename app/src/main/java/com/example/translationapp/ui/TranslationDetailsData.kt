@@ -1,4 +1,4 @@
-package com.example.translationapp.presentation
+package com.example.translationapp.ui
 
 data class TranslationDetailsData(
     val translationId: Long,

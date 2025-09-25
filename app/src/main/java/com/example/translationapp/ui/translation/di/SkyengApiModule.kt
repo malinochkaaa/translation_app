@@ -1,6 +1,6 @@
-package com.example.translationapp.presentation.translation.di
+package com.example.translationapp.ui.translation.di
 
-import com.example.translationapp.presentation.translation.data.TranslationApi
+import com.example.translationapp.ui.translation.data.TranslationApi
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides

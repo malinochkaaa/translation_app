@@ -3,28 +3,13 @@ package com.example.translationapp.domain
 import android.content.Context
 import com.example.translationapp.data.TranslationEntity
 import com.example.translationapp.data.TranslationsDatabase
-import com.example.translationapp.presentation.translation.data.TranslationApi
 import kotlinx.coroutines.flow.Flow
 
-class TranslationsRepository(
+class TranslationsListRepository(
     context: Context,
-    private val translationApi: TranslationApi,
 ) {
     private val translationsDatabase = TranslationsDatabase.getTranslationsDatabase(context)
     private val translationsDao = translationsDatabase.getTranslationsDao()
-
-    suspend fun getWordTranslationData(searchWord: String): String? {
-        val response = translationApi.getWordTranslation(searchWord)
-
-        return if (response.isSuccessful) {
-            val translationResponse = response.body()
-            translationResponse?.let {
-                it.searchData.firstOrNull()?.meanings?.firstOrNull()?.translation?.text
-            }
-        } else {
-            null
-        }
-    }
 
     fun observeFavorites(
         searchedWord: String,

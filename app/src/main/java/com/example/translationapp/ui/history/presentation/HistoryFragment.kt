@@ -1,4 +1,4 @@
-package com.example.translationapp.presentation.history.presentation
+package com.example.translationapp.ui.history.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,10 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.translationapp.databinding.FragmentHistoryBinding
-import com.example.translationapp.presentation.TranslationActionListener
-import com.example.translationapp.presentation.TranslationDetailsData
-import com.example.translationapp.presentation.TranslationListRecyclerAdapter
-import com.example.translationapp.presentation.TranslationService
+import com.example.translationapp.ui.TranslationActionListener
+import com.example.translationapp.ui.TranslationDetailsData
+import com.example.translationapp.ui.TranslationListRecyclerAdapter
+import com.example.translationapp.ui.TranslationService
 
 class HistoryFragment : Fragment() {
 

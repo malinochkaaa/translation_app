@@ -27,7 +27,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:hint="Hello -> Привет" />
 
-        <com.example.translationapp.presentation.TranslationCardViewLikeButton
+        <com.example.translationapp.ui.TranslationCardViewLikeButton
             android:id="@+id/translation_card_favorite_button"
             android:layout_width="15dp"
             android:layout_height="15dp"

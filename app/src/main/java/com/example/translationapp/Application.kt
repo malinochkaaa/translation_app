@@ -1,9 +1,7 @@
 package com.example.translationapp
 
 import android.app.Application
-import com.example.translationapp.ui.favorites.di.FavoritesFeatureComponent
-import com.example.translationapp.ui.history.di.HistoryFeatureComponent
-import com.example.translationapp.ui.translation.di.TranslationFeatureComponent
+import com.example.translationapp.di.TranslationFeatureComponent
 
 class Application: Application() {
 
@@ -11,7 +9,5 @@ class Application: Application() {
         super.onCreate()
 
         TranslationFeatureComponent.init(application = this)
-        HistoryFeatureComponent.init(application = this)
-        FavoritesFeatureComponent.init(application = this)
     }
 }

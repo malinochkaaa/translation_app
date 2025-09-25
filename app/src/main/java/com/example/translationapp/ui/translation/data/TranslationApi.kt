@@ -9,5 +9,5 @@ interface TranslationApi {
     @GET("words/search")
     suspend fun getWordTranslation(
         @Query("search") searchWord: String,
-    ): Response<TranslationsListResponse>
+    ): Response<List<TranslationsListResponse>>
 }

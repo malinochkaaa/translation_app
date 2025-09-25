@@ -4,11 +4,6 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class TranslationsListResponse(
-    val searchData: List<SearchData>,
-)
-
-@JsonClass(generateAdapter = true)
-data class SearchData(
     val meanings: List<MeaningData>,
 )
 

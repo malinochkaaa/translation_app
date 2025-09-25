@@ -3,6 +3,7 @@ package com.example.translationapp.domain
 import android.content.Context
 import com.example.translationapp.data.TranslationEntity
 import com.example.translationapp.data.TranslationsDatabase
+import com.example.translationapp.ui.TranslationDetailsData
 import kotlinx.coroutines.flow.Flow
 
 class TranslationsListRepository(
@@ -11,21 +12,9 @@ class TranslationsListRepository(
     private val translationsDatabase = TranslationsDatabase.getTranslationsDatabase(context)
     private val translationsDao = translationsDatabase.getTranslationsDao()
 
-    fun observeFavorites(
-        searchedWord: String,
-        translatedWord: String,
-        isFavorite: Boolean,
-    ) : Result<Flow<List<TranslationEntity>>> = runCatching {
-        translationsDao.observeFavorites()
-    }
+    fun observeFavorites() = translationsDao.observeFavorites()
 
-    fun observeTranslations(
-        searchedWord: String,
-        translatedWord: String,
-        isFavorite: Boolean,
-    ) : Result<Flow<List<TranslationEntity>>> = runCatching {
-        translationsDao.observeTranslations()
-    }
+    fun observeTranslations() = translationsDao.observeTranslations()
 
     fun insertTranslation(
         searchedWord: String,
@@ -42,18 +31,27 @@ class TranslationsListRepository(
     }
 
     fun updateTranslation(
-        id: Long,
-        searchedWord: String,
-        translatedWord: String,
-        isFavorite: Boolean,
+        translationData: TranslationDetailsData,
     ) : Result<Unit> = runCatching {
         translationsDao.updateTranslation(
-            TranslationEntity(
-                id = id,
-                searchedWord = searchedWord,
-                translatedWord = translatedWord,
-                isFavorite = isFavorite,
-            )
+            translationData
+                .copy(isFavorite = !translationData.isFavorite)
+                .toTranslationEntity()
         )
     }
+
+    fun removeTranslation(
+        translationData: TranslationDetailsData,
+    ) : Result<Unit> = runCatching {
+        translationsDao.removeTranslation(
+            translationData.toTranslationEntity()
+        )
+    }
+
+    private fun TranslationDetailsData.toTranslationEntity() = TranslationEntity(
+        id = this.translationId,
+        isFavorite  = this.isFavorite,
+        searchedWord = this.searchedWord,
+        translatedWord = this.translatedWord,
+    )
 }

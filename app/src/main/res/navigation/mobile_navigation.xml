@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_translation"
-        android:name="com.example.translationapp.ui.history.presentation.HistoryFragment"
+        android:name="com.example.translationapp.ui.translation.presentation.TranslationFragment"
         android:label="@string/title_translation"
         tools:layout="@layout/fragment_translation" />
 
     <fragment
         android:id="@+id/navigation_history"
-        android:name="com.example.translationapp.ui.translation.presentation.TranslationFragment"
+        android:name="com.example.translationapp.ui.history.presentation.HistoryFragment"
         android:label="@string/title_history"
         tools:layout="@layout/fragment_history" />
 
@@ -21,5 +21,13 @@
         android:id="@+id/navigation_favorites"
         android:name="com.example.translationapp.ui.favorites.presentation.FavoritesFragment"
         android:label="@string/title_favorites"
-        tools:layout="@layout/fragment_favorites" />
+        tools:layout="@layout/fragment_favorites">
+
+        <action
+            android:id="@+id/action_favorites_to_translation"
+            app:destination="@id/navigation_translation"
+            app:popUpTo="@id/navigation_favorites"
+            app:popUpToInclusive="true"/>
+
+    </fragment>
 </navigation>

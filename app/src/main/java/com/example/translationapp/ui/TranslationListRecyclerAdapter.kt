@@ -7,7 +7,7 @@ import com.example.translationapp.R
 import com.example.translationapp.databinding.TranslationCardViewBinding
 
 class TranslationListRecyclerAdapter(
-    private val translationActionListener: TranslationActionListener,
+    private val translationRecyclerAdapterActionListener: TranslationRecyclerAdapterActionListener,
 ) : RecyclerView.Adapter<TranslationListRecyclerAdapter.ProfileOutfitsViewHolder>() {
 
     class ProfileOutfitsViewHolder(val binding: TranslationCardViewBinding) :
@@ -31,10 +31,6 @@ class TranslationListRecyclerAdapter(
     override fun onBindViewHolder(holder: ProfileOutfitsViewHolder, position: Int) {
         val translatedItem = data[position]
         val context = holder.itemView.context
-        holder.itemView.tag = translatedItem
-        holder.binding.translationCardFavoriteButton.tag = translatedItem
-        holder.binding.translationCardRemoveButton.tag = translatedItem
-
 
         with(holder.binding) {
             translationCardWordsText.text = context.getString(
@@ -45,11 +41,11 @@ class TranslationListRecyclerAdapter(
             translationCardFavoriteButton.apply {
                 setLiked(translatedItem.isFavorite)
                 setOnClickListener {
-                    translationActionListener.onTranslationLike(translatedItem)
+                    translationRecyclerAdapterActionListener.onTranslationLike(translatedItem)
                 }
             }
             translationCardRemoveButton.setOnClickListener {
-                translationActionListener.onTranslationRemove(translatedItem)
+                translationRecyclerAdapterActionListener.onTranslationRemove(translatedItem)
             }
         }
     }

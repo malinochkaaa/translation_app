@@ -11,7 +11,7 @@ class GetTranslationUseCase(
         return if (response.isSuccessful) {
             val translationResponse = response.body()
             translationResponse?.let {
-                it.searchData.firstOrNull()?.meanings?.firstOrNull()?.translation?.text
+                it.firstOrNull()?.meanings?.firstOrNull()?.translation?.text
             }
         } else {
             null

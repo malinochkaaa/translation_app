@@ -1,9 +1,11 @@
-package com.example.translationapp.ui.translation.di
+package com.example.translationapp.di
 
 import android.app.Application
 import android.content.Context
-import com.example.translationapp.di.RetrofitModule
-import com.example.translationapp.di.TranslationListModule
+import com.example.translationapp.ui.favorites.presentation.FavoritesViewModel
+import com.example.translationapp.ui.history.presentation.HistoryViewModel
+import com.example.translationapp.ui.translation.di.GetTranslationModule
+import com.example.translationapp.ui.translation.di.SkyengApiModule
 import com.example.translationapp.ui.translation.presentation.TranslationViewModel
 import dagger.BindsInstance
 import dagger.Component
@@ -19,6 +21,10 @@ import javax.inject.Singleton
 interface TranslationFeatureComponent {
 
     fun injectTranslationViewModel(viewModel: TranslationViewModel)
+
+    fun injectHistoryViewModel(viewModel: HistoryViewModel)
+
+    fun injectFavoritesViewModel(viewModel: FavoritesViewModel)
 
     @Component.Factory
     interface Factory {

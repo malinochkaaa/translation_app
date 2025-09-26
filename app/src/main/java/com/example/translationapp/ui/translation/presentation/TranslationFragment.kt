@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.translationapp.databinding.FragmentTranslationBinding
-import com.example.translationapp.ui.ViewUtils.showErrorMessage
+import com.example.translationapp.ui.utils.ViewUtils.showErrorMessage
 import kotlinx.coroutines.launch
 
 class TranslationFragment : Fragment() {
@@ -53,9 +53,9 @@ class TranslationFragment : Fragment() {
         lifecycleScope.launch {
             translationViewModel.translationViewState.collect { viewState ->
                 when {
+                    viewState.errorMessage != null -> showErrorMessage(requireContext(), viewState.errorMessage)
                     viewState.foundWordText?.isNotBlank() == true ->
                         binding.translationFragmentFoundWordText.text = viewState.foundWordText
-                    viewState.errorMessage != null -> showErrorMessage(requireContext(), "")
                 }
             }
         }

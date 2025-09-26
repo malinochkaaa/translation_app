@@ -1,4 +1,4 @@
-package com.example.translationapp.ui.translation.di
+package com.example.translationapp.di
 
 import com.example.translationapp.ui.translation.data.TranslationApi
 import com.squareup.moshi.Moshi

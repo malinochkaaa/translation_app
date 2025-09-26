@@ -4,8 +4,6 @@ import android.app.Application
 import android.content.Context
 import com.example.translationapp.ui.favorites.presentation.FavoritesViewModel
 import com.example.translationapp.ui.history.presentation.HistoryViewModel
-import com.example.translationapp.ui.translation.di.GetTranslationModule
-import com.example.translationapp.ui.translation.di.SkyengApiModule
 import com.example.translationapp.ui.translation.presentation.TranslationViewModel
 import dagger.BindsInstance
 import dagger.Component

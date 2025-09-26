@@ -4,23 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.translationapp.R
 import com.example.translationapp.databinding.FragmentFavoritesBinding
-import com.example.translationapp.ui.TranslationRecyclerAdapterActionListener
-import com.example.translationapp.ui.TranslationListRecyclerAdapter
 import com.example.translationapp.ui.TranslationDetailsData
+import com.example.translationapp.ui.TranslationListRecyclerAdapter
 import com.example.translationapp.ui.TranslationListViewAction
-import com.example.translationapp.ui.history.presentation.HistoryFragment
-import com.example.translationapp.ui.translation.presentation.TranslationFragment
+import com.example.translationapp.ui.TranslationRecyclerAdapterActionListener
+import com.example.translationapp.ui.utils.ViewUtils.showErrorMessage
 import kotlinx.coroutines.launch
-import kotlin.getValue
 
 class FavoritesFragment : Fragment() {
 
@@ -46,12 +43,12 @@ class FavoritesFragment : Fragment() {
         binding.favoritesFragmentAddTranslationButton.setOnClickListener {
             favoritesViewModel.onAddButtonClicked()
         }
-        setUpFavoritesListGallery()
-        collectViewState()
+        setUpFavoritesListRecyclerView()
+        collectRecyclerViewState()
         observeViewAction()
     }
 
-    private fun setUpFavoritesListGallery() {
+    private fun setUpFavoritesListRecyclerView() {
         favoritesListAdapter = TranslationListRecyclerAdapter(
             object : TranslationRecyclerAdapterActionListener {
                 override fun onTranslationLike(translationData: TranslationDetailsData) {
@@ -75,10 +72,12 @@ class FavoritesFragment : Fragment() {
         }
     }
 
-    private fun collectViewState() {
+    private fun collectRecyclerViewState() {
         viewLifecycleOwner.lifecycleScope.launch {
-            favoritesViewModel.favoritesData.collect { viewState ->
-                favoritesListAdapter?.data = viewState
+            favoritesViewModel.favoritesData.collect { listViewState ->
+                favoritesListAdapter?.data = listViewState
+                binding.favoritesFragmentEmptyListText.isVisible = listViewState.isEmpty()
+                binding.favoritesFragmentGallery.isVisible = listViewState.isNotEmpty()
             }
         }
     }
@@ -87,8 +86,14 @@ class FavoritesFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             favoritesViewModel.translationListViewAction.collect { action ->
                 when (action) {
-                    TranslationListViewAction.NavigateToTranslationScreen -> findNavController().navigate(R.id.action_favorites_to_translation)
-                    is TranslationListViewAction.ShowToastError -> TODO()
+                    TranslationListViewAction.NavigateToTranslationScreen -> findNavController().navigate(
+                        R.id.action_favorites_to_translation
+                    )
+
+                    is TranslationListViewAction.ShowToastError -> showErrorMessage(
+                        requireContext(),
+                        action.errorMessage
+                    )
                 }
             }
         }
@@ -97,5 +102,6 @@ class FavoritesFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        favoritesListAdapter = null
     }
 }

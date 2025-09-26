@@ -7,4 +7,5 @@
     <color name="violet_darker">#9163cb</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="light_violet">#CBC3E3</color>
 </resources>

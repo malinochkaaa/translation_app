@@ -3,6 +3,7 @@ package com.example.translationapp.ui.translation.presentation
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.translationapp.R
 import com.example.translationapp.di.TranslationFeatureComponent
 import com.example.translationapp.domain.TranslationsListRepository
 import com.example.translationapp.ui.translation.domain.GetTranslationUseCase
@@ -41,19 +42,15 @@ class TranslationViewModel : ViewModel() {
             val translatedWord = getTranslationUseCase.getWordTranslationData(searchedWord)
             if (translatedWord == null) {
                 withContext(Dispatchers.Default) {
-                    translationViewStateValue = copyValueWithError("Error finding translation for word")
+                    translationViewStateValue = copyValueWithError(R.string.error_message_text_failed_to_translate)
                 }
-                Log.e("Lol", "Error finding translation for word")
             } else {
                 withContext(Dispatchers.Default) {
                     translationViewStateValue = copyValueWithFoundWordText(translatedWord)
                 }
                 insertTranslation(searchedWord, translatedWord)
                     .onFailure {
-                        Log.e("Lol", "Error inserting translation")
-                    }
-                    .onSuccess {
-                        Log.e("Lol", "Success inserting translation")
+                        translationViewStateValue = copyValueWithError(R.string.error_message_text_failed_to_add)
                     }
             }
         }
@@ -70,7 +67,7 @@ class TranslationViewModel : ViewModel() {
             foundWordText = foundWord,
             errorMessage = null,
         )
-    private fun copyValueWithError(errorMessage: String) =
+    private fun copyValueWithError(errorMessage: Int) =
         translationViewStateValue.copy(
             foundWordText = null,
             errorMessage = errorMessage,

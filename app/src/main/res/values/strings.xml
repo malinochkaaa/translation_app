@@ -5,4 +5,16 @@
     <string name="title_favorites">Favorites</string>
 
     <string name="translations_list_card_view_text">%1$s -> %2$s</string>
+
+    <string name="error_message_text_failed_to_remove">Unable to remove translation</string>
+    <string name="error_message_text_failed_to_favorite">Unable to change favorite</string>
+    <string name="error_message_text_failed_to_translate">Unable to translate</string>
+    <string name="error_message_text_failed_to_add">Unable to add translation to history</string>
+
+    <string name="history_fragment_empty_list_text">No translations found</string>
+    <string name="favorites_fragment_empty_list_text">No favorites found</string>
+    <string name="content_description_add_floating_button">Add translation</string>
+    <string name="translation_fragment_translate_word_button">Let\'s translate!</string>
+    <string name="translation_fragment_searched_word_hint_text">Type your word</string>
+    <string name="translation_fragment_translated_word_hint_text">Translated word will be displayed here</string>
 </resources>

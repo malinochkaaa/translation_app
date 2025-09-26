@@ -4,7 +4,6 @@ import android.content.Context
 import com.example.translationapp.data.TranslationEntity
 import com.example.translationapp.data.TranslationsDatabase
 import com.example.translationapp.ui.TranslationDetailsData
-import kotlinx.coroutines.flow.Flow
 
 class TranslationsListRepository(
     context: Context,

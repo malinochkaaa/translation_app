@@ -23,7 +23,7 @@
             android:inputType="text"
             android:maxLines="1"
             android:gravity="top|start"
-            android:hint="Type your word"
+            android:hint="@string/translation_fragment_searched_word_hint_text"
             android:background="@drawable/rounded_shape"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:background="@drawable/rounded_shape"
-        android:text="Translate!"/>
+        android:text="@string/translation_fragment_translate_word_button"/>
 
     <TextView
         android:id="@+id/translation_fragment_found_word_text"
@@ -44,6 +44,6 @@
         android:padding="17dp"
         android:textSize="16sp"
         android:autofillHints="Login"
-        android:hint="Your meaning"
+        android:hint="@string/translation_fragment_translated_word_hint_text"
         android:background="@drawable/rounded_shape"/>
 </LinearLayout>

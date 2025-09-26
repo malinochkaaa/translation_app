@@ -12,11 +12,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.translationapp.R
 import com.example.translationapp.databinding.FragmentHistoryBinding
-import com.example.translationapp.ui.TranslationDetailsData
-import com.example.translationapp.ui.TranslationListRecyclerAdapter
-import com.example.translationapp.ui.TranslationListViewAction
-import com.example.translationapp.ui.TranslationRecyclerAdapterActionListener
+import com.example.translationapp.ui.actions.TranslationListViewAction
+import com.example.translationapp.ui.entities.TranslationDetailsData
 import com.example.translationapp.ui.utils.ViewUtils.showErrorMessage
+import com.example.translationapp.ui.views.recycler_view.TranslationListRecyclerAdapter
+import com.example.translationapp.ui.views.recycler_view.TranslationRecyclerAdapterActionListener
 import kotlinx.coroutines.launch
 
 class HistoryFragment : Fragment() {

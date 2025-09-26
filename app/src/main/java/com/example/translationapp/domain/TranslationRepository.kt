@@ -1,15 +1,12 @@
 package com.example.translationapp.domain
 
-import android.content.Context
 import com.example.translationapp.data.TranslationEntity
-import com.example.translationapp.data.TranslationsDatabase
-import com.example.translationapp.ui.TranslationDetailsData
+import com.example.translationapp.data.TranslationsDao
+import com.example.translationapp.ui.entities.TranslationDetailsData
 
 class TranslationsListRepository(
-    context: Context,
+    private val translationsDao: TranslationsDao
 ) {
-    private val translationsDatabase = TranslationsDatabase.getTranslationsDatabase(context)
-    private val translationsDao = translationsDatabase.getTranslationsDao()
 
     fun observeFavorites() = translationsDao.observeFavorites()
 

@@ -6,8 +6,8 @@ import androidx.lifecycle.viewModelScope
 import com.example.translationapp.R
 import com.example.translationapp.di.TranslationFeatureComponent
 import com.example.translationapp.domain.TranslationsListRepository
-import com.example.translationapp.ui.TranslationDetailsData
-import com.example.translationapp.ui.TranslationListViewAction
+import com.example.translationapp.ui.actions.TranslationListViewAction
+import com.example.translationapp.ui.entities.TranslationDetailsData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow

@@ -1,4 +1,4 @@
-package com.example.translationapp.ui
+package com.example.translationapp.ui.views
 
 import android.content.Context
 import android.graphics.drawable.Drawable

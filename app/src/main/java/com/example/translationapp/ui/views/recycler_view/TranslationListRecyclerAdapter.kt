@@ -1,10 +1,11 @@
-package com.example.translationapp.ui
+package com.example.translationapp.ui.views.recycler_view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.translationapp.R
 import com.example.translationapp.databinding.TranslationCardViewBinding
+import com.example.translationapp.ui.entities.TranslationDetailsData
 
 class TranslationListRecyclerAdapter(
     private val translationRecyclerAdapterActionListener: TranslationRecyclerAdapterActionListener,

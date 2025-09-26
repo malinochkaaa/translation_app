@@ -1,4 +1,4 @@
-package com.example.translationapp.ui
+package com.example.translationapp.ui.actions
 
 import androidx.annotation.StringRes
 

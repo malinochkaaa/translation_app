@@ -1,6 +1,6 @@
 package com.example.translationapp.di
 
-import android.content.Context
+import com.example.translationapp.data.TranslationsDao
 import com.example.translationapp.domain.TranslationsListRepository
 import dagger.Module
 import dagger.Provides
@@ -12,8 +12,8 @@ class TranslationListModule {
     @Provides
     @Singleton
     fun provideTranslationsRepository(
-        context: Context,
+        translationsDao: TranslationsDao,
     ): TranslationsListRepository {
-        return TranslationsListRepository(context)
+        return TranslationsListRepository(translationsDao)
     }
 }

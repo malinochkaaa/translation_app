@@ -60,7 +60,4 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     kapt(libs.dagger.compiler)
     kapt(libs.androidx.room.compiler)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 }

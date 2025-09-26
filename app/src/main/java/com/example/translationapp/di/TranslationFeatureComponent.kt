@@ -15,6 +15,7 @@ import javax.inject.Singleton
     SkyengApiModule::class,
     GetTranslationModule::class,
     TranslationListModule::class,
+    DatabaseModule::class,
 ])
 interface TranslationFeatureComponent {
 

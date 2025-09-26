@@ -27,7 +27,8 @@ class HistoryViewModel : ViewModel() {
     lateinit var translationsListRepository: TranslationsListRepository
     var translationDetailsData: Flow<List<TranslationDetailsData>>
     private val _translationListViewAction = MutableSharedFlow<TranslationListViewAction>()
-    val translationListViewAction: SharedFlow<TranslationListViewAction> = _translationListViewAction.asSharedFlow()
+    val translationListViewAction: SharedFlow<TranslationListViewAction> =
+        _translationListViewAction.asSharedFlow()
 
     init {
         TranslationFeatureComponent.instance.injectHistoryViewModel(this)

@@ -28,7 +28,8 @@ class FavoritesViewModel : ViewModel() {
     var favoritesData: Flow<List<TranslationDetailsData>>
 
     private val _translationListViewAction = MutableSharedFlow<TranslationListViewAction>()
-    val translationListViewAction: SharedFlow<TranslationListViewAction> = _translationListViewAction.asSharedFlow()
+    val translationListViewAction: SharedFlow<TranslationListViewAction> =
+        _translationListViewAction.asSharedFlow()
 
     init {
         TranslationFeatureComponent.instance.injectFavoritesViewModel(this)

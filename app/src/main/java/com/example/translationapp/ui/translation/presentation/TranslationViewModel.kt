@@ -1,6 +1,5 @@
 package com.example.translationapp.ui.translation.presentation
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.translationapp.R
@@ -30,19 +29,22 @@ class TranslationViewModel : ViewModel() {
     )
     private var translationViewStateValue
         get() = _translationViewState.value
-        set(value) {_translationViewState.value = value }
+        set(value) {
+            _translationViewState.value = value
+        }
     val translationViewState: Flow<TranslationViewState> = _translationViewState
 
     init {
         TranslationFeatureComponent.instance.injectTranslationViewModel(this)
     }
 
-    fun onButtonClicked(searchedWord:String) {
+    fun onButtonClicked(searchedWord: String) {
         viewModelScope.launch(Dispatchers.IO) {
             val translatedWord = getTranslationUseCase.getWordTranslationData(searchedWord)
             if (translatedWord == null) {
                 withContext(Dispatchers.Default) {
-                    translationViewStateValue = copyValueWithError(R.string.error_message_text_failed_to_translate)
+                    translationViewStateValue =
+                        copyValueWithError(R.string.error_message_text_failed_to_translate)
                 }
             } else {
                 withContext(Dispatchers.Default) {
@@ -50,7 +52,8 @@ class TranslationViewModel : ViewModel() {
                 }
                 insertTranslation(searchedWord, translatedWord)
                     .onFailure {
-                        translationViewStateValue = copyValueWithError(R.string.error_message_text_failed_to_add)
+                        translationViewStateValue =
+                            copyValueWithError(R.string.error_message_text_failed_to_add)
                     }
             }
         }
@@ -62,11 +65,13 @@ class TranslationViewModel : ViewModel() {
             translatedWord = translatedWord,
             isFavorite = false,
         )
+
     private fun copyValueWithFoundWordText(foundWord: String) =
         translationViewStateValue.copy(
             foundWordText = foundWord,
             errorMessage = null,
         )
+
     private fun copyValueWithError(errorMessage: Int) =
         translationViewStateValue.copy(
             foundWordText = null,

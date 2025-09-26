@@ -53,7 +53,11 @@ class TranslationFragment : Fragment() {
         lifecycleScope.launch {
             translationViewModel.translationViewState.collect { viewState ->
                 when {
-                    viewState.errorMessage != null -> showErrorMessage(requireContext(), viewState.errorMessage)
+                    viewState.errorMessage != null -> showErrorMessage(
+                        requireContext(),
+                        viewState.errorMessage
+                    )
+
                     viewState.foundWordText?.isNotBlank() == true ->
                         binding.translationFragmentFoundWordText.text = viewState.foundWordText
                 }

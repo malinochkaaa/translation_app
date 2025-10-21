@@ -11,12 +11,16 @@
 **UI:** XML, ViewBinding, Navigation Component, Material Design
 
 ## Демонстрация работы
-![Demo](./docs/demo_recording.gif)
+<p align="center">
+  <img src="./docs/demo.gif" width="320" alt="Демонстрация работы приложения" />
+</p>
 
 ## Скриншоты
-![Экран избранного](./docs/screenshots/favorites_screenshot.png)
-![Экран истории переводов](./docs/screenshots/history_screenshot.png)
-![Экран перевода слов](./docs/screenshots/translation_screenshot.png)
+<p align="center">
+  <img src="./docs/screenshots/translation_screenshot.png" width="230" alt="Экран перевода слов" />
+  <img src="./docs/screenshots/history_screenshot.png" width="230" alt="Экран истории переводов" />
+  <img src="./docs/screenshots/favorites_screenshot.png" width="230" alt="Экран избранного" />
+</p>
 
 ## Автор
 Алина Акимова  

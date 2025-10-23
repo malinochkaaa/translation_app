@@ -1,4 +1,4 @@
-package com.example.translationapp.ui.translation.presentation
+package com.example.translationapp.ui.translation_feature.presentation
 
 import androidx.annotation.StringRes
 

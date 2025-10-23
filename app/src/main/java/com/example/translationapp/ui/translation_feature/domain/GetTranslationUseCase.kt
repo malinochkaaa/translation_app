@@ -1,7 +1,7 @@
-package com.example.translationapp.ui.translation.domain
+package com.example.translationapp.ui.translation_feature.domain
 
 import android.util.Log
-import com.example.translationapp.ui.translation.data.TranslationApi
+import com.example.translationapp.ui.translation_feature.data.TranslationApi
 
 class GetTranslationUseCase(
     private val translationApi: TranslationApi,

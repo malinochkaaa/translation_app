@@ -1,14 +1,14 @@
 # Android-приложение для перевода слов с возможностью сохранения истории переводов и добавления их в избранное
-Приложение использует [SkyengApi](https://dictionary.skyeng.ru/doc/api/external) для получения переводов и состоит из: экрана перевода, экрана истории переводов и экрана избранного.
+Приложение на Jetpack Compose, которое использует [SkyengApi](https://dictionary.skyeng.ru/doc/api/external) для получения переводов и состоит из: экрана перевода, экрана истории переводов и экрана избранного.
 Также поддержано кэширование переводов и офлайн-режим для ранее найденных слов. Приложение построено по принципам Clean Architecture.
 
 ## Стек технологий:
-**Архитектура:** MVVM, Clean Architecture  
-**Асинхронность:** Kotlin Flow, Coroutines  
+**Архитектура:** MVVM, Clean Architecture, Single Activity, Compose Navigation
+**Асинхронность:** Kotlin Coroutines, Flow, StateFlow
 **Сеть:** Retrofit, OkHttp  
 **Хранение данных:** Room  
 **DI:** Dagger  
-**UI:** XML, ViewBinding, Navigation Component, Material Design
+**UI:** Jetpack Compose, Material 3, Snackbar, Floating Action Button
 
 ## Демонстрация работы
 <p align="center">

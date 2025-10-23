@@ -15,7 +15,7 @@ class RetrofitModule {
     @Singleton
     fun provideLoggingInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY // Or other desired log level
+            level = HttpLoggingInterceptor.Level.BODY
         }
     }
 

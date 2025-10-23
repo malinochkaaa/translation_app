@@ -1,4 +1,4 @@
-package com.example.translationapp.ui.favorites.presentation
+package com.example.translationapp.ui.favorites_feature.presentation
 
 import android.util.Log
 import androidx.lifecycle.ViewModel

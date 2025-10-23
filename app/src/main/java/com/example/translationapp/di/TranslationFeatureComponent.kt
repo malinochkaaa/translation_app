@@ -2,9 +2,9 @@ package com.example.translationapp.di
 
 import android.app.Application
 import android.content.Context
-import com.example.translationapp.ui.favorites.presentation.FavoritesViewModel
-import com.example.translationapp.ui.history.presentation.HistoryViewModel
-import com.example.translationapp.ui.translation.presentation.TranslationViewModel
+import com.example.translationapp.ui.favorites_feature.presentation.FavoritesViewModel
+import com.example.translationapp.ui.history_feature.presentation.HistoryViewModel
+import com.example.translationapp.ui.translation_feature.presentation.TranslationViewModel
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton

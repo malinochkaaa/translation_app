@@ -1,11 +1,11 @@
-package com.example.translationapp.ui.translation.presentation
+package com.example.translationapp.ui.translation_feature.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.translationapp.R
 import com.example.translationapp.di.TranslationFeatureComponent
 import com.example.translationapp.domain.TranslationsListRepository
-import com.example.translationapp.ui.translation.domain.GetTranslationUseCase
+import com.example.translationapp.ui.translation_feature.domain.GetTranslationUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

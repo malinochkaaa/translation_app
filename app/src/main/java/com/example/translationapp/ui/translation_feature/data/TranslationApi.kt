@@ -1,4 +1,4 @@
-package com.example.translationapp.ui.translation.data
+package com.example.translationapp.ui.translation_feature.data
 
 import retrofit2.Response
 import retrofit2.http.GET

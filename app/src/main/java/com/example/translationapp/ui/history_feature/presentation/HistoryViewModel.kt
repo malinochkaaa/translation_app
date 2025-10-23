@@ -1,4 +1,4 @@
-package com.example.translationapp.ui.history.presentation
+package com.example.translationapp.ui.history_feature.presentation
 
 import android.util.Log
 import androidx.lifecycle.ViewModel

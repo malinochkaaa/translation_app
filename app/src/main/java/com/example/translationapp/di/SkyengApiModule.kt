@@ -1,6 +1,6 @@
 package com.example.translationapp.di
 
-import com.example.translationapp.ui.translation.data.TranslationApi
+import com.example.translationapp.ui.translation_feature.data.TranslationApi
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides

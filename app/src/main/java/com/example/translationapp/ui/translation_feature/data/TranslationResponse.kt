@@ -1,4 +1,4 @@
-package com.example.translationapp.ui.translation.data
+package com.example.translationapp.ui.translation_feature.data
 
 import com.squareup.moshi.JsonClass
 
